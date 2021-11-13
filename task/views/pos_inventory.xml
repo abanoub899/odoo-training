@@ -1,0 +1,15 @@
+<odoo>
+<!-- inherted pos_inventory -->
+<record id="pos_inventory_inherit" model="ir.ui.view">
+    <field name="name">pos.inventory.inherit</field>
+    <field name="model">pos.session</field>
+    <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='order_count']" position="before">
+          <button name="action_view_pos_inventory" class="oe_stat_button" icon="fa-shopping-basket" type="object">
+                            <field name="picking_ids" widget="statinfo" string="Inventory"/>
+                        </button>
+        </xpath>
+    </field>
+</record>
+</odoo>
